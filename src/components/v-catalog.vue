@@ -3,11 +3,11 @@
     <h3 class="mb-4 display-6">Каталог</h3>
     <div class="v-catalog--list row">
       <v-catalog-item
-        class="col-md-6" 
+        class="col-xl-2 col-lg-4 col-md-6" 
         v-for="product in PRODUCTS"
         :key="product.article"
         :product_data="product"
-        @sendArticle="test"
+        @addToCart="addToCart"
       />
     </div>
   </div>
@@ -29,11 +29,12 @@ export default {
     ])
   },
   methods: {
-    test(data) {
-      console.log(data);
+    addToCart(data) {
+      this.ADD_TO_CART(data)
     },
     ...mapActions([
-      'GET_PRODUCTS_FROM_API'
+      'GET_PRODUCTS_FROM_API',
+      'ADD_TO_CART'
     ])
   },
   mounted() {
@@ -53,6 +54,6 @@ export default {
     margin-left: 70px;
     h3 {
       font-size: 30px;
-    } 
+    }
   }
 </style>

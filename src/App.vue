@@ -1,30 +1,31 @@
 <template>
-  <v-sidebar/>
-  <main class="main">
-    <router-view />
+  
+  <v-sidebar :isOpen="isOpen"/>
+  <v-header @clickCo="isOpen = !isOpen"/>
+  <main class="main" :class="{noMargin: !isOpen}">
+    <router-view /> 
   </main>
 </template>
 
 <script>
 
 import vSidebar from "@/components/v-sidebar";
+import vHeader from "./components/v-header.vue";
 
 export default {
   name: 'App',
-  data () {
-    return {
-      
-    }
-  },
+  data: () => ({
+    isOpen: true
+  }),
   components: {
-    vSidebar
-  }
+    vSidebar, vHeader
+  },
 }
 </script>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-@import "@/assets/styles/style.scss";
+@import '@/assets/styles/style.scss';
 
 #app {
   font-family: 'Roboto', sans-serif;
@@ -32,7 +33,12 @@ export default {
 
 .main {
   margin-left: 250px;
-  overflow-y: hidden;
+  overflow-x: hidden;
+  transition: .4s ease-in-out;
+  padding-top: 70px;
 }
 
+.noMargin {
+  margin: 0;
+}
 </style>

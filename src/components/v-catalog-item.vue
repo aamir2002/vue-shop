@@ -5,7 +5,7 @@
     <p class="v-catalog-item__price">Price: {{product_data.price}}&#36;</p>
     <button 
     class="btn btn-primary" 
-    @click="sendDataToParent">Add to cart
+    @click="addToCart">Add to cart
     </button>
   </div>
 
@@ -27,9 +27,9 @@ export default {
     }
   },
   methods: {
-    sendDataToParent() {
-      this.$emit('sendArticle', this.product_data.article)
-    }
+   addToCart() {
+    this.$emit('addToCart', this.product_data)
+   }
   }
 }
 </script>
@@ -40,6 +40,7 @@ export default {
     padding: 35px 20px;
     margin-bottom: 30px;
     margin-left: 30px;
+    border-radius: 7px;
     &__name {
       font-size: 20px;
       padding-top: 15px;
@@ -49,5 +50,6 @@ export default {
       height: 230px;
       object-fit: cover;
     }
+    
   }
 </style>
