@@ -35,7 +35,6 @@ export default {
 <style lang="scss" scoped>
 
 	.sidebar-body {
-		position: fixed;
 		top: 0;
 		left: 0;
 		overflow-x: hidden;
@@ -44,7 +43,7 @@ export default {
 		width: 0;
     transition: .4s ease-out;
     position: fixed;
-    margin-top: 50px;
+    padding-top: 70px;
 	}
 
   .nav {

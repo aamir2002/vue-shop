@@ -2,7 +2,7 @@
   <div class="v-catalog-item">
     <img :src="product_data.image" class="" alt="">
     <p class="v-catalog-item__name">{{product_data.name}}</p>
-    <p class="v-catalog-item__price">Price: {{product_data.price}}&#36;</p>
+    <p class="v-catalog-item__price">Цена: {{product_data.price}}&#36;</p>
     <button 
     class="btn btn-primary" 
     @click="addToCart">Add to cart
@@ -50,6 +50,9 @@ export default {
       height: 230px;
       object-fit: cover;
     }
-    
+    @media (min-width: 1200px) and (max-width: 1700px) {
+      flex: 0 0 auto;
+      width: 33%;
+    }
   }
 </style>

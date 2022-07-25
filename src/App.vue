@@ -35,7 +35,7 @@ export default {
   margin-left: 250px;
   overflow-x: hidden;
   transition: .4s ease-in-out;
-  padding-top: 70px;
+  padding-top: 15px;
 }
 
 .noMargin {

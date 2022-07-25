@@ -15,7 +15,7 @@ import vCartItem from './v-cart-item'
 export default {
 
   name: 'v-cart',
-  component: {
+  components: {
     vCartItem
   },  
   data () {
@@ -34,5 +34,11 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
+  .v-cart {
+    margin-left: 70px;
+    h3 {
+      font-size: 30px;
+    }
+  }
 </style>

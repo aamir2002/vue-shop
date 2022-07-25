@@ -14,14 +14,6 @@ const store = createStore({
 			state.cart.push(product)
 		}
 	},
-	getters: {
-		PRODUCTS(state) {
-			return state.products
-		},
-		CART(state) {
-			return state.cart
-		}
-	},
 	actions: {
 		async GET_PRODUCTS_FROM_API({commit}) {
 			try {
@@ -38,7 +30,15 @@ const store = createStore({
 		ADD_TO_CART({commit}, product) {
 			commit('SET_CART', product)
 		}
-	}
+	},
+	getters: {
+		PRODUCTS(state) {
+			return state.products
+		},
+		CART(state) {
+			return state.cart
+		}
+	},
 })
 
 export default store
