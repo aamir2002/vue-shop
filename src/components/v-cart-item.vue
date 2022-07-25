@@ -2,15 +2,19 @@
   <div class="v-cart-item">
     <img :src="cart_item_data.image" alt="">
     <div class="v-cart-item__info">
-      <p>{{cart_item_data.name}}</p>
-      <p>Цена: {{cart_item_data.price}}</p>
+      <p class="v-cart-item__name">{{cart_item_data.name}}</p>
+      <p class="v-cart-item__price">Цена: {{cart_item_data.price}}</p>
       <p>{{cart_item_data.article}}</p>     
     </div>
-    <div class="v-cart-item__quantity"></div>
-    <button class="btn btn-danger">Delete</button>
+    <div class="v-cart-item__quantity d-flex">
+      <p class="pe-1">Количество:</p>
+      {{cart_item_data.quantity}}
+    </div>
+    <button class="btn btn-danger" @click="deleteFromCart">Delete</button>
   </div>
 </template>
 <script>
+
 export default {
   props: {
     cart_item_data: {
@@ -19,10 +23,19 @@ export default {
         return {}
       }
     }
-  }
+  },
+  computed: {},
+  methods: {
+    deleteFromCart() {
+      this.$emit('deleteFromCart')
+    }
+  },
+  mounted() {
+    this.cart_item_data['quantity'] = 1
+  },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
   .v-cart-item {
     box-shadow: 1px 1px 15px var(--bs-gray-300);
     padding: 20px 20px;
@@ -37,6 +50,12 @@ export default {
       width: 150px;
       object-fit: cover;
       height: 150px;
+    }
+    &__name {
+      font-size: 20px;
+    }
+    &__price {
+      color: var(--bs-gray-600);
     }
   }
 </style>

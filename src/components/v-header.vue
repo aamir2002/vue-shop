@@ -5,11 +5,7 @@
         <a href="#" @click.prevent="$emit('clickCo')" class="sidebar-co">
           Сайдбар
         </a>
-        <a class="d-block" href="#">Tour</a>
-        <a class="d-block" href="#">Product</a>
-        <a class="d-block" href="#">Features</a>
-        <a class="d-block" href="#">Enterprise</a>
-        <a class="d-block" href="#">Support</a>
+        <a class="d-block" href="#">Главная</a>
       </div>
     </nav>
   </header>
@@ -27,7 +23,8 @@ export default {};
   a {
     text-decoration: none;
     padding: 20px;
-    font-size: 20px;
+    font-size: 16px;
+    text-transform: uppercase;
     color: black;
     transition: .3s ease;
     &:hover {

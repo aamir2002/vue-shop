@@ -1,26 +1,24 @@
 <template>
   <div class="v-cart">
     <h3 class="mb-4 display-6">Корзина</h3>
-    <v-cart-item 
-      v-for="item in cart_data"
-      :key="item.article"
-      :cart_item_data="item"
-    />
+    <v-cart-item v-for="(item, index) in cart_data" :key="item.article" :cart_item_data="item"
+      @deleteFromCart="deleteFromCart(index)" />
   </div>
 </template>
 
 <script>
 import vCartItem from './v-cart-item'
+import { mapActions } from 'vuex'
 
 export default {
 
   name: 'v-cart',
   components: {
     vCartItem
-  },  
-  data () {
+  },
+  data() {
     return {
-      
+
     }
   },
   props: {
@@ -30,15 +28,24 @@ export default {
         return []
       }
     }
+  },
+  methods: {
+    ...mapActions([
+      'DELETE_FROM_CART'
+    ]),
+    deleteFromCart(index) {
+      this.DELETE_FROM_CART(index)
+    } 
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  .v-cart {
-    margin-left: 70px;
-    h3 {
-      font-size: 30px;
-    }
+.v-cart {
+  margin-left: 70px;
+
+  h3 {
+    font-size: 30px;
   }
+}
 </style>
