@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h3>About Page</h3>
+		<h3>О нас</h3>
 	</div>
 </template>
 
@@ -17,5 +17,9 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+  h3 {
+    font-size: 25px;
+    font-weight: 400;
+  }
 </style>

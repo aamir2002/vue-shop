@@ -27,6 +27,13 @@
       "price": 300,
       "article": "T4",
       "available": true
+    },
+    {
+      "image": "http://imgholder.ru/1500x300",
+      "name": "Товар 5",
+      "price": 300,
+      "article": "T5",
+      "available": true
     }
   ]
 }

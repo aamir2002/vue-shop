@@ -24,8 +24,8 @@ export default {
   name: 'v-sidebar',
   data: () => ({
     links: [
-      {title: 'Home', url: '/'},
-      {title: 'About', url: '/about'},
+      {title: 'Главная', url: '/'},
+      {title: 'О нас', url: '/about'},
     ]
   }),
   props: ['isOpen']
@@ -58,4 +58,5 @@ export default {
   .open {
     width: 250px;
   }
+
 </style>

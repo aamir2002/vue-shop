@@ -3,7 +3,7 @@
   <v-sidebar :isOpen="isOpen"/>
   <v-header @clickCo="isOpen = !isOpen"/>
   <main class="main" :class="{noMargin: !isOpen}">
-    <router-view /> 
+    <keep-alive><router-view /></keep-alive>
   </main>
 </template>
 
@@ -27,8 +27,9 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 @import '@/assets/styles/style.scss';
 
-#app {
-  font-family: 'Roboto', sans-serif;
+html {
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
 }
 
 .main {
